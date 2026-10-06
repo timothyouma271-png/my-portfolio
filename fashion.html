@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>fashion store</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: auto;
+            background-color: hsl(200, 11%, 89%);
+            color: #a0745f;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgb(191, 203, 17);
+            color: rgb(160, 25, 39);
+            padding: 1.2rem 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 6px rgba(156, 115, 115, 0.15);
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            /* fixed height to crop */
+            object-fit: cover;
+            /* crop image to fit container */
+            display: block;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .product-info {
+            padding: 1rem 1.2rem 1.5rem;
+        }
+
+        .product-info h4 {
+            margin: 0 0 0.5rem;
+            font-size: 1.3rem;
+            color: #ff4081;
+        }
+
+        .product-info p {
+            margin: 0 0 0.8rem;
+            color: #666;
+        }
+
+        .product-price {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #222;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 900px;
+            background-color: hwb(96 0% 0%);
+            border-radius: 12px;
+            box-shadow: 0pc;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            border: 1px solid;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: cornflowerblue;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgb(98, 255, 0);
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #ffd000;
+            transition: 0.3s;
+            color: black;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #ff0077;
+            color: black;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tim's fashion store</h1>
+        <p>Dripping zone</p>
+    </header>
+
+    <section id="products" class="products">
+
+
+        <div class="product-card">
+            <img class="product-image" src="C:\Users\user\Music\OneDrive\Documents\html projects\1759233803787.jpg"
+                alt="casual men wear">
+            <div class="product-info">
+                <h4>Casual men wear</h4>
+                <p>Offers a clean yet relaxed look</p>
+                <div class="product-price">ksh.5000</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img class="product-image" src="C:\Users\user\Music\OneDrive\Documents\html projects\1759233826897.jpg"
+                alt="elegant dress">
+            <div class="product-info">
+                <h4>Elegant dress</h4>
+                <p>Crafted from high quality fabric</p>
+                <div class="product-price">ksh.4000</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img class="product-image" src="C:\Users\pc\Pictures\tims\rolls-royce-ghost-ewb-2021-4200x2801-5156.jpeg""
+                alt="men's suit tuxedo">
+            <div class="product-info">
+                <h4>Men's suit tuxedo</h4>
+                <p>A well suited suit</p>
+                <div class="product-price">ksh.7500</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offer">
+        <h2 style="text-align: center; text-decoration: underline; color: #ffd000;">UPCOMING SALE OFFERS</h2>
+        <table>
+            <tr>
+                <th>Sale event</th>
+                <th>Discount</th>
+                <th>Date</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Festive clearance</td>
+                <td>Up to 5%</td>
+                <td>21st Dec to 1st Jan</td>
+                <td>Light casual cool, boots</td>
+            </tr>
+            <tr>
+                <td>Black Friday</td>
+                <td>Flat 50%</td>
+                <td>21st Dec</td>
+                <td>Exclusive one day sale</td>
+            </tr>
+            <tr>
+                <td>Christmas special</td>
+                <td>Buy 2 get 1 free</td>
+                <td>25th Dec - 28th Dec</td>
+                <td>Festive party</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="fashion">
+        <h2>Fashion options available</h2>
+        <p>We bring nice fashions during festive seasons:</p>
+        <ul>
+            <li>Glam party outfits</li>
+            <li>Casual festive wears</li>
+            <li>Accessories and footwear</li>
+            <li>Winter and holiday layering</li>
+        </ul>
+    </section>
+
+    <section class="benefits">
+        <h3>Benefits of shopping with us</h3>
+        <p>We value our customers and provide various benefits:</p>
+        <ul>
+            <li>Affordable prices</li>
+            <li>Wide variety of styles</li>
+            <li>Festive season offers & discounts</li>
+            <li>Flexible payment options</li>
+            <li>High quality products</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tim's fashion store. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,578 @@
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================== */
+
+        nav {
+            background: #111;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #d4af37;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+.hero {
+    min-height: 75vh;
+
+    background: linear-gradient(
+        135deg,
+        #050505,
+        #151515,
+        #2a2108
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+.hero h1 span {
+    color: #d4af37;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #eee;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #d4af37;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================== */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        .gold-line {
+            width: 70px;
+            height: 3px;
+            background: #d4af37;
+            margin: 15px auto;
+        }
+
+
+        /* =========================
+           PRODUCT SECTION
+        ========================== */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: 0.4s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .sale-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #111;
+            color: #d4af37;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 22px;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: #777;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 15px;
+        }
+
+        .price span {
+            color: #999;
+            font-size: 0.9rem;
+            text-decoration: line-through;
+            margin-left: 8px;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            background: #111;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .shop-btn:hover {
+            background: #d4af37;
+            color: #111;
+        }
+
+
+        /* =========================
+           SALE SECTION
+        ========================== */
+
+        .offer-section {
+            background: #111;
+            color: white;
+            max-width: none;
+        }
+
+        .offer-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        .offer-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .offer-title h2 {
+            color: #d4af37;
+            font-size: 2.3rem;
+        }
+
+        .offer-title p {
+            color: #ccc;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            color: #222;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 18px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #d4af37;
+            color: #111;
+            font-weight: bold;
+        }
+
+        tr:hover td {
+            background: #f5f5f5;
+        }
+
+
+        /* =========================
+           FASHION OPTIONS
+        ========================== */
+
+        .fashion {
+            background: white;
+            border-radius: 15px;
+            margin-top: 60px;
+        }
+
+        .fashion-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .fashion-text h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .fashion-text p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .fashion-list {
+            list-style: none;
+        }
+
+        .fashion-list li {
+            margin-bottom: 12px;
+            padding: 12px;
+            background: #f7f7f7;
+            border-left: 4px solid #d4af37;
+        }
+
+        .fashion-image img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+
+        /* =========================
+           BENEFITS
+        ========================== */
+
+        .benefits {
+            text-align: center;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            transition: 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================
+           NEWSLETTER
+        ========================== */
+
+        .newsletter {
+            background: #d4af37;
+            max-width: none;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .newsletter p {
+            margin-bottom: 25px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 14px 25px;
+            border: none;
+            background: #111;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        footer span {
+            color: #d4af37;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .fashion-content {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.8rem;
+            }
+
+            th,
+            td {
+                padding: 10px 5px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
+        /* =========================
+   SEARCH BAR
+========================= */
+
+.search-container {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+#searchInput:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+/* =========================
+   CATEGORY BUTTONS
+========================= */
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.category-btn {
+    padding: 11px 24px;
+    border: 2px solid #111;
+    background: white;
+    color: #111;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.category-btn:hover {
+    background: #111;
+    color: white;
+}
+
+.category-btn.active {
+    background: #d4af37;
+    border-color: #d4af37;
+    color: #111;
+}
+    
