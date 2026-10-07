@@ -4,131 +4,133 @@
 <head>
     <title>fashion store</title>
     <style>
-        body {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            margin: auto;
-            background-color: hsl(200, 11%, 89%);
-            color: #a0745f;
-            line-height: 1.6;
-        }
+    body {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin: auto;
+        background-color: #f8f1f3;
+        color: #4a3038;
+        line-height: 1.6;
+    }
 
-        header {
-            background-color: rgb(191, 203, 17);
-            color: rgb(160, 25, 39);
-            padding: 1.2rem 2rem;
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            box-shadow: 0 4px 6px rgba(156, 115, 115, 0.15);
-        }
+    header {
+        background-color: #4b1725;
+        color: #f6d6df;
+        padding: 1.2rem 2rem;
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 900;
+        letter-spacing: 2px;
+        box-shadow: 0 4px 10px rgba(75, 23, 37, 0.25);
+    }
 
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-        .product-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .product-card {
+        background: #fffafb;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(75, 23, 37, 0.12);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #ead1d9;
+    }
 
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-        }
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(75, 23, 37, 0.22);
+    }
 
-        .product-image {
-            width: 100%;
-            height: 350px;
-            /* fixed height to crop */
-            object-fit: cover;
-            /* crop image to fit container */
-            display: block;
-            border-radius: 8px 8px 0 0;
-        }
+    .product-image {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background-color: #f7e6eb;
+    border-radius: 8px 8px 0 0;
+}
 
-        .product-info {
-            padding: 1rem 1.2rem 1.5rem;
-        }
+    .product-info {
+        padding: 1rem 1.2rem 1.5rem;
+    }
 
-        .product-info h4 {
-            margin: 0 0 0.5rem;
-            font-size: 1.3rem;
-            color: #ff4081;
-        }
+    .product-info h4 {
+        margin: 0 0 0.5rem;
+        font-size: 1.3rem;
+        color: #9b4059;
+    }
 
-        .product-info p {
-            margin: 0 0 0.8rem;
-            color: #666;
-        }
+    .product-info p {
+        margin: 0 0 0.8rem;
+        color: #765e66;
+    }
 
-        .product-price {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #222;
-        }
+    .product-price {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #4b1725;
+    }
 
-        section {
-            padding: 2rem;
-            margin: 1rem auto;
-            max-width: 900px;
-            background-color: hwb(96 0% 0%);
-            border-radius: 12px;
-            box-shadow: 0pc;
-        }
+    section {
+        padding: 2rem;
+        margin: 1rem auto;
+        max-width: 900px;
+        background-color: #fffafb;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(75, 23, 37, 0.08);
+        border: 1px solid #ead1d9;
+    }
 
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
+    ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+    }
 
-        th,
-        td {
-            border: 1px solid;
-            padding: 12px;
-            text-align: center;
-        }
+    th,
+    td {
+        border: 1px solid #e1c4ce;
+        padding: 12px;
+        text-align: center;
+    }
 
-        th {
-            background: cornflowerblue;
-            color: white;
-        }
+    th {
+        background: #6b2034;
+        color: #f8dfe6;
+    }
 
-        tr:nth-child(even) {
-            background-color: rgb(98, 255, 0);
-            color: white;
-        }
+    tr:nth-child(even) {
+        background-color: #f7e6eb;
+        color: #4a3038;
+    }
 
-        tr:hover {
-            background-color: #ffd000;
-            transition: 0.3s;
-            color: black;
-        }
+    tr:hover {
+        background-color: #d98ca2;
+        transition: 0.3s;
+        color: #ffffff;
+    }
 
-        footer {
-            text-align: center;
-            background-color: #ff0077;
-            color: black;
-            padding: 1rem;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-        }
-    </style>
+    footer {
+        text-align: center;
+        background-color: #4b1725;
+        color: #f6d6df;
+        padding: 1rem;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+    }
+</style>
 </head>
 
 <body>
@@ -141,7 +143,7 @@
 
 
         <div class="product-card">
-            <img class="product-image" src="C:\Users\user\Music\OneDrive\Documents\html projects\1759233803787.jpg"
+            <img class="product-image" src="images\casual wear.jpeg"
                 alt="casual men wear">
             <div class="product-info">
                 <h4>Casual men wear</h4>
@@ -151,7 +153,7 @@
         </div>
 
         <div class="product-card">
-            <img class="product-image" src="C:\Users\user\Music\OneDrive\Documents\html projects\1759233826897.jpg"
+            <img class="product-image" src="images\elegant drees.jpeg"
                 alt="elegant dress">
             <div class="product-info">
                 <h4>Elegant dress</h4>
@@ -161,7 +163,7 @@
         </div>
 
         <div class="product-card">
-            <img class="product-image" src="C:\Users\pc\Pictures\tims\rolls-royce-ghost-ewb-2021-4200x2801-5156.jpeg""
+            <img class="product-image" src="images\tuxedo suit.jpeg"
                 alt="men's suit tuxedo">
             <div class="product-info">
                 <h4>Men's suit tuxedo</h4>
