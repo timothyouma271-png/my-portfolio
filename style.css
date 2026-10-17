@@ -317,38 +317,125 @@ section h2::after {
     max-width: 600px;
     margin: auto;
 }
-/* Skills Section */
-#skills {
-    padding: 50px;
-    text-align: center;
-    color: white;
+
+/* SKILLS SECTION*/
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+    width: 100%;
 }
-#skills h2 {
-    font-size: 30px;
-    margin-bottom: 25px;
+
+/*GLASS SKILL CONTAINERS*/
+
+.skill-group {
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 1.25rem 1.3rem;
+
+    /* Visible blue glass with violet tint */
+    background: linear-gradient(
+        135deg,
+        rgba(30, 75, 125, 0.48),
+        rgba(25, 40, 80, 0.38)
+    );
+
+    /* Cyan glass outline */
+    border: 1px solid rgba(77, 210, 255, 0.65);
+    border-radius: 14px;
+
+    /* Glass depth and subtle glow */
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.2),
+        0 0 12px rgba(0, 195, 255, 0.08);
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    overflow-wrap: anywhere;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
-.skills-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+
+/* Glass hover effect */
+.skill-group:hover {
+    background: linear-gradient(
+        135deg,
+        rgba(35, 105, 160, 0.58),
+        rgba(55, 55, 120, 0.46)
+    );
+
+    border-color: #55dfff;
+    transform: translateY(-3px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        0 10px 28px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(0, 195, 255, 0.2);
 }
-.skill {
-    background-color: #333;
-    padding: 15px 25px;
-    border-radius: 8px;
-    font-size: 18px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-cursor: pointer;
+
+/*SKILL CATEGORY HEADINGS*/
+
+.skill-group h3 {
+    margin: 0 0 0.8rem;
+    padding-bottom: 0.65rem;
+
+    color: #67e3ff;
+    font-size: 1rem;
+    font-weight: 650;
+    line-height: 1.4;
+
+    border-bottom: 1px solid rgba(77, 210, 255, 0.35);
 }
-.skill:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
+/*SKILL LISTS*/
+
+.skill-group ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
+/* Individual skills */
+.skill-group li {
+    padding: 0.48rem 0;
+
+    border-top: 1px solid rgba(120, 180, 220, 0.2);
+
+    font-size: 0.88rem;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+/* Remove separator above first skill */
+.skill-group li:first-child {
+    border-top: 0;
+}
+
+/* Learning and development notes */
+.skill-group .note {
+    color: var(--slate);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.also {
+    margin: 1rem 0 0;
+
+    color: var(--slate);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
 /* Projects Section */
-/* =========================
-   PROJECTS SECTION
-========================= */
 
 #projects {
     padding: 80px 5%;
@@ -374,9 +461,7 @@ cursor: pointer;
     gap: 22px;
 }
 
-/* =========================
-   PROJECT CARD
-========================= */
+/*PROJECT CARD*/
 
 .project-card {
     width: 100%;
@@ -407,9 +492,7 @@ cursor: pointer;
         0 0 20px rgba(34, 211, 238, 0.15);
 }
 
-/* =========================
-   PROJECT IMAGE
-========================= */
+/*PROJECT IMAGE*/
 
 .project-card img {
     width: 100%;
@@ -428,9 +511,7 @@ cursor: pointer;
     transform: scale(1.03);
 }
 
-/* =========================
-   PROJECT TITLE
-========================= */
+/* PROJECT TITLE*/
 
 .project-card h3 {
     font-size: 18px;
@@ -439,9 +520,7 @@ cursor: pointer;
     margin-bottom: 10px;
 }
 
-/* =========================
-   PROJECT DESCRIPTION
-========================= */
+/*PROJECT DESCRIPTION*/
 
 .project-card p {
     color: #94a3b8;
@@ -452,9 +531,7 @@ cursor: pointer;
     margin-bottom: 15px;
 }
 
-/* =========================
-   PROJECT BUTTON
-========================= */
+/*PROJECT BUTTON*/
 
 .project-card .project-button {
     margin-top: auto;
@@ -621,10 +698,8 @@ footer p {
     font-size: 14px;
     color: #475569;
 }
-/* =====================================================
-   TABLET RESPONSIVE DESIGN
-   Screens: 769px - 1024px
-   ===================================================== */
+/*TABLET RESPONSIVE DESIGN
+   Screens: 769px - 1024px */
 
 @media (max-width: 1024px) {
 
@@ -717,8 +792,7 @@ footer p {
 }
 
 
-/* 
-   MOBILE RESPONSIVE DESIGN
+/*MOBILE RESPONSIVE DESIGN
    Screens: 768px and below
    */
 
@@ -880,13 +954,43 @@ footer p {
     footer {
         padding: 30px 15px;
     }
+    /*skills section*/
+    @media (max-width: 600px) {
+    .skills {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+
+    .skill-group {
+        padding: 0.8rem 0.65rem;
+        border-radius: 8px;
+    }
+
+    .skill-group h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .skill-group li {
+        font-size: 0.82rem;
+        line-height: 1.35;
+        padding: 0.35rem 0;
+    }
+
+    .skill-group .note {
+        font-size: 0.8rem;
+    }
+
+    .also {
+        font-size: 0.82rem;
+    }
+}
 }
 
 
 /* 
    SMALL PHONES
-   Screens: 480px and below
-    */
+   Screens: 480px and below*/
 
 @media (max-width: 480px) {
 
@@ -1014,35 +1118,11 @@ footer p {
         margin: 5px 0 0;
         text-align: center;
     }
-
-
-    /* CONTACT */
-    .contact-info {
-        padding: 22px 14px;
-    }
-
-    .contact-info p {
-        font-size: 14px;
-    }
-
-
+ 
     /* FOOTER */
     footer p {
         font-size: 13px;
     }
-}
-#contactBtn {
-    background-color: #00bfff;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#contactBtn:hover {
-    background-color: #008ecc;
 }
 .cv-button {
     display: inline-block;
@@ -1183,7 +1263,6 @@ footer p {
     }
 }
 
-
 /* Blinking cursor */
 @keyframes cursorBlink {
 
@@ -1191,8 +1270,6 @@ footer p {
         border-color: transparent;
     }
 }
-
-
 
    /*TABLET */
 @media (max-width: 768px) {
@@ -1206,11 +1283,7 @@ footer p {
 
 }
 
-
-
   /*  PHONE*/
-    
-
 @media (max-width: 480px) {
 
     .typing-text {
@@ -1243,4 +1316,460 @@ footer p {
 
     }
 
+}
+
+   /* CONTACT SECTION */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact p {
+    max-width: 56ch;
+    margin: 0 auto 1rem;
+}
+
+/* Center the Contact Layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 26rem);
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    max-width: 30rem;
+    margin: 0 auto;
+    gap: 1.25rem;
+}
+
+  /* CONTACT FORM*/
+
+.contact-form {
+    width: 100%;
+    max-width: 26rem;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 0.9rem;
+    color: #111827;
+    padding: 0.5rem 0.65rem;
+    margin-bottom: 0.65rem;
+    background: #ffffff;
+    border: 1px solid var(--line-strong);
+    border-radius: 7px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--cyan-bright);
+    outline-offset: 1px;
+    border-color: var(--cyan);
+}
+
+.contact-form textarea {
+    min-height: 5rem;
+    resize: vertical;
+}
+
+button.btn {
+    display: inline-block;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.55rem 1rem;
+    cursor: pointer;
+}
+
+.form-status {
+    margin: 0.75rem 0 0;
+    font-weight: 500;
+    min-height: 1.25rem;
+}
+
+/* ==============================
+   CONTACT LINKS
+================================ */
+
+.contact-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    font-size: 0.75rem;
+}
+
+.contact-list li {
+    flex: 0 1 auto;
+    min-width: 0;
+}
+
+.contact-list li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.4rem;
+    color: var(--ink);
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+/* ==============================
+WHITE ICON BOXES */
+
+.contact-list .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: 0 0 2.75rem;
+    box-sizing: border-box;
+
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    color: #111827;
+}
+
+/* Make SVG Icons Visible */
+.contact-list .icon svg {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    width: 1.35rem;
+    height: 1.35rem;
+    max-width: 100%;
+    flex-shrink: 0;
+
+    color: #111827;
+    overflow: visible;
+}
+
+/* Filled Icons: WhatsApp, LinkedIn, GitHub */
+.contact-list .icon svg:not(.stroke) {
+    fill: #111827 !important;
+    stroke: none;
+}
+
+/* Ensure Paths of Filled Icons Are Visible */
+.contact-list .icon svg:not(.stroke) path {
+    fill: #111827 !important;
+    stroke: none;
+}
+
+/* Outline Icons: Email */
+.contact-list .icon svg.stroke {
+    fill: none !important;
+    stroke: #111827 !important;
+    stroke-width: 1.8;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+/* Hover Effect */
+.contact-list a:hover .icon {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #ffffff;
+}
+
+.contact-list a:hover .icon svg:not(.stroke),
+.contact-list a:hover .icon svg:not(.stroke) path {
+    fill: #ffffff !important;
+}
+
+.contact-list a:hover .icon svg.stroke {
+    fill: none !important;
+    stroke: #ffffff !important;
+}
+
+/* Link Hover */
+.contact-list a:hover span:last-child {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Email Label */
+.contact-list li:last-child a > span:last-child {
+    white-space: nowrap;
+    font-size: 0.75rem;
+}
+
+/*rESPONSIVE LAYOUT*/
+
+@media (max-width: 600px) {
+    .contact-list {
+        flex-wrap: wrap;
+        gap: 0.85rem;
+    }
+
+    .contact-list li:last-child a > span:last-child {
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .contact-list .icon {
+        transition: none;
+    }
+}
+
+
+
+
+/* Normal response times */
+.nw-preview .ok {
+    color: #4ee0a0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: right;
+    white-space: nowrap;
+}
+
+
+/* Responsive text for smaller screens */
+
+.nw-project-progress {
+    width: 100%;
+    margin: 0.75rem 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.nw-progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.nw-progress-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #55dfff;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.nw-progress-dot {
+    width: 7px;
+    height: 7px;
+    background: #55dfff;
+    border-radius: 50%;
+    box-shadow: 0 0 7px rgba(85, 223, 255, 0.6);
+}
+
+.nw-progress-percent {
+    color: #a8c1d3;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.nw-progress-track {
+    width: 100%;
+    height: 5px;
+    overflow: hidden;
+    background: #203747;
+    border-radius: 10px;
+}
+
+.nw-progress-fill {
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(90deg, #168dce, #55dfff);
+    border-radius: inherit;
+}
+
+/*NETWATCH PREVIEW — RESPONSIVE TEXT */
+
+/* Smaller laptops */
+@media (max-width: 1024px) {
+    .nw-preview .name {
+        font-size: 0.76rem;
+    }
+
+    .nw-preview .row > span:nth-child(2) {
+        font-size: 0.7rem;
+        padding: 4px 5px;
+    }
+
+    .nw-preview .ok,
+    .nw-preview .warn {
+        font-size: 0.72rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .nw-preview .name {
+        font-size: 0.73rem;
+    }
+
+    .nw-preview .row > span:nth-child(2) {
+        font-size: 0.66rem;
+        padding: 3px 4px;
+    }
+
+    .nw-preview .ok,
+    .nw-preview .warn {
+        font-size: 0.7rem;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .nw-preview .name {
+        font-size: 0.7rem;
+    }
+
+    .nw-preview .row > span:nth-child(2) {
+        font-size: 0.62rem;
+        padding: 3px 4px;
+    }
+
+    .nw-preview .ok,
+    .nw-preview .warn {
+        font-size: 0.68rem;
+    }
+}
+
+/*SKILLS — RESPONSIVE DESIGN*/
+/* SMALL LAPTOPS — 1024px */
+@media (max-width: 1024px) {
+
+    .skills {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+
+    .skill-group {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .skill-group h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.65rem;
+        padding-bottom: 0.55rem;
+    }
+
+    .skill-group li {
+        padding: 0.4rem 0;
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+
+    .skill-group .note {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+
+    .also {
+        margin-top: 0.85rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* TABLETS — 768px */
+@media (max-width: 768px) {
+
+    .skills {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
+    }
+
+    .skill-group {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .skill-group h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.65rem;
+        padding-bottom: 0.55rem;
+    }
+
+    .skill-group li {
+        padding: 0.42rem 0;
+        font-size: 0.84rem;
+        line-height: 1.45;
+    }
+
+    .skill-group .note {
+        font-size: 0.84rem;
+        line-height: 1.45;
+    }
+
+    .also {
+        margin-top: 0.9rem;
+        font-size: 0.86rem;
+    }
+}
+
+/* MOBILE PHONES — 480px */
+@media (max-width: 480px) {
+
+    .skills {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+    }
+
+    .skill-group {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .skill-group h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.65rem;
+        padding-bottom: 0.55rem;
+    }
+
+    .skill-group li {
+        padding: 0.45rem 0;
+        font-size: 0.86rem;
+        line-height: 1.5;
+    }
+
+    .skill-group .note {
+        font-size: 0.86rem;
+        line-height: 1.5;
+    }
+
+    .also {
+        margin-top: 0.85rem;
+        font-size: 0.86rem;
+        line-height: 1.6;
+    }
 }
